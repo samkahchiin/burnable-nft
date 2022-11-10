@@ -1,3 +1,4 @@
+// TODO: Replace contractAddress with the value you got from running `npx hardhat run scripts/deploy.js --network matic`
 const contractAddress = '0x270fb25662267f6B5f2D11245F06cD09aEc4a2fa'
 
 require('dotenv').config();
@@ -8,9 +9,7 @@ const API_KEY = process.env.API_KEY;
 
 // Define an Alchemy Provider
 const provider = new ethers.providers.AlchemyProvider('maticmum', API_KEY)
-// const contract = require("../artifacts/contracts/MyNFT.sol/MyNFT.json");
 const contract = require("../artifacts/contracts/BurnableNFT.sol/BurnableNFT.json");
-
 // Create a signer
 const privateKey = process.env.PRIVATE_KEY
 const signer = new ethers.Wallet(privateKey, provider)
