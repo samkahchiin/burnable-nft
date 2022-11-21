@@ -4,6 +4,9 @@ async function main() {
 
   // Start deployment, returning a promise that resolves to a contract object
   const BurnableNFT = await Burnable.deploy(); // Instance of the contract
+
+  // wait for the contract to deploy
+  await BurnableNFT.deployed();
   console.log("Contract deployed to address:", BurnableNFT.address);
 }
 
